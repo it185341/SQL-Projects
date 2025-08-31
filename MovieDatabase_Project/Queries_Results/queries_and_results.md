@@ -1,9 +1,9 @@
 ## Columbia movies with video stock > 10
-###Query:###
+### Query: ###
 SELECT title
 FROM movie
 WHERE production_company = 'Columbia' AND stock_video > 10
-###Results:###
+### Results: ###
 | title             | video_stock |
 |-------------------|------------|
 | The way we were   | 15         |
