@@ -1,5 +1,6 @@
 ## 1. Columbia movies with video stock > 10
 ###Query:###
+
           SELECT title
 		  
           FROM movie
@@ -13,6 +14,7 @@
 
 ## 2. Display the titles of the films (once each in the result) on the pages either Robert Redford has acted in or Bradford Dillman has acted in.
 ###Query:###
+
           SELECT DISTINCT movie_title
           FROM participation
           WHERE (actor_last_name = 'Redford' AND actor_first_name = 'Robert') OR (actor_last_name = 'Dillman' AND actor_first_name = 'Bradford')
