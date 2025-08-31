@@ -5,7 +5,7 @@
           WHERE production_company = 'Columbia' AND stock_video > 10
 ***Results:***
          | title                 | video_stock |
-         |-----------------------|-------------|
+         | --------------------- | ----------- |
          | The way we were       | 15          |
 
 ### Display the titles of the films (once each in the result) on the pages either Robert Redford has acted in or Bradford Dillman has acted in.
