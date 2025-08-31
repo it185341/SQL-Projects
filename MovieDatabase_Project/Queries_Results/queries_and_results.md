@@ -1,14 +1,14 @@
-### Columbia movies with video stock > 10
-**Query:**
+## Columbia movies with video stock > 10
+###Query:###
 SELECT title
 FROM movie
 WHERE production_company = 'Columbia' AND stock_video > 10
-
+###Results:###
 | title             | video_stock |
 |-------------------|------------|
 | The way we were   | 15         |
 
-### Display the titles of the films (once each) on the pages either Robert Redford has acted in or Bradford Dillman has acted in
+## Display the titles of the films (once each) on the pages either Robert Redford has acted in or Bradford Dillman has acted in
 **Query:**
 SELECT DISTINCT movie_title
 FROM participation
