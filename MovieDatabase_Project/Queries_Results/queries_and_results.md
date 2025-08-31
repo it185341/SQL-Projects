@@ -2,9 +2,7 @@
 ###Query:###
 
           SELECT title
-		  
           FROM movie
-		  
           WHERE production_company = 'Columbia' AND stock_video > 10
 		  
 ###Results:###
@@ -26,9 +24,11 @@
 
 ## 3. Display the films (once each) that were shown for more than 15 weeks in a cinema.
 ###Query:###
+
           SELECT DISTINCT movie_title
           FROM cinema
           WHERE weeks > 15
+		  
 ###Results:###
 | movie_title     |
 | --------------- |
@@ -36,8 +36,10 @@
 
 ## 4. The Cartesian product of the tables “Participation” and “Cinema” is created.
 ###Query:###
+
           SELECT *
           FROM participation,cinema
+		  
 ###Results:###
 | movie_title          | actor_last_name   | actor_first_name   | hall         | movie_title_         | weeks |
 | -------------------- | ----------------- | ------------------ | ------------ | -------------------- | ----- |
@@ -54,8 +56,10 @@
 
 ## 5. Create a join of the “Participation” and “Cinema” tables by enforcing an equality condition on the column that the two tables have in common.
 ###Query:###
+
           SELECT *
           FROM participation,cinema
+		  
 ###Results:###
 | movie_title          | actor_last_name   | actor_first_name   | hall         | weeks |
 | -------------------- | ----------------- | ------------------ | ------------ | ----- |
@@ -72,8 +76,11 @@
 
 ## 6. Create a join between the “Participation” and “Cinema” tables using the JOIN operator.
 ###Query:###
+
          SELECT *
-         FROM participation P JOIN cinema C ON P.movie_title = C.movie_title
+         FROM participation P 
+		 		JOIN cinema C ON P.movie_title = C.movie_title
+		 
 ###Results:###
 | movie_title     | actor_last_name   | actor_first_name   | hall         | movie_title_    | weeks |
 | --------------- | ----------------- | ------------------ | ------------ | --------------- | ----- |
