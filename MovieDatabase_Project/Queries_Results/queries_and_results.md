@@ -1,4 +1,4 @@
--- Columbia movies with video stock > 10
+- Columbia movies with video stock > 10
 ### Query: ###
 SELECT title
 FROM movie
