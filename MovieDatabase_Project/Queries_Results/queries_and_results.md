@@ -43,6 +43,7 @@
          | Prince of Tides      | Nolte             | Nick               | STER CENTURY | A night in the opera | 24    |
          | Prince of Tides      | Danner            | Blythe             | STER CENTURY | A night in the opera | 24    |
          | The way we were      | Redford           | Robert             | STER CENTURY | A night in the opera | 24    |
+		 
          594 rows affected.
 
 ### Create a join of the “Participation” and “Cinema” tables by enforcing an equality condition on the column that the two tables have in common.
