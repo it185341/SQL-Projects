@@ -1,8 +1,11 @@
 ## 1. Columbia movies with video stock > 10
 ###Query:###
           SELECT title
+		  
           FROM movie
+		  
           WHERE production_company = 'Columbia' AND stock_video > 10
+		  
 ###Results:###
 | title                 | video_stock |
 | --------------------- | ----------- |
@@ -13,6 +16,7 @@
           SELECT DISTINCT movie_title
           FROM participation
           WHERE (actor_last_name = 'Redford' AND actor_first_name = 'Robert') OR (actor_last_name = 'Dillman' AND actor_first_name = 'Bradford')
+		  
 ###Results:###
 | movie_title     |
 | --------------- |
