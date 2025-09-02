@@ -19,12 +19,11 @@
 ### Query: ###
 
           SELECT  K.* 
-	        FROM keeper K JOIN vehicle V ON K.id = V.keeper
-					JOIN image I ON I.reg = V.id
-	        WHERE I.camera = 2 AND K.id IN 
-                 (SELECT  V.keeper 
-									FROM vehicle V JOIN image I ON I.reg = V.id
-									WHERE I.camera = 5)
+	      FROM keeper K JOIN vehicle V ON K.id = V.keeper
+		  JOIN image I ON I.reg = V.id
+	      WHERE I.camera = 2 AND K.id IN (SELECT  V.keeper 
+										  FROM vehicle V JOIN image I ON I.reg = V.id
+										  WHERE I.camera = 5)
 		  
 ### Results: ###
 | id    | name               | address         |
@@ -35,14 +34,14 @@
 ### Query: ###
 
          SELECT  K.* 
-	       FROM keeper K JOIN vehicle V ON K.id = V.keeper
-				 JOIN image I ON I.reg = V.id
-	       WHERE I.camera = 2 
-	       INTERSECT 
-	       SELECT  K.* 
-	       FROM keeper K JOIN vehicle V ON K.id = V.keeper
-				 JOIN image I ON I.reg = V.id
-	       WHERE I.camera = 5
+	     FROM keeper K JOIN vehicle V ON K.id = V.keeper
+		 JOIN image I ON I.reg = V.id
+	     WHERE I.camera = 2 
+	     INTERSECT 
+	     SELECT  K.* 
+	     FROM keeper K JOIN vehicle V ON K.id = V.keeper
+		 JOIN image I ON I.reg = V.id
+	     WHERE I.camera = 5
 		  
 ### Results: ###
 | id    | name               | address         |
@@ -53,12 +52,12 @@
 ### Query: ###
 
           SELECT  K.* 
-	        FROM keeper K JOIN vehicle V ON K.id = V.keeper
-					JOIN image I ON I.reg = V.id
-	        WHERE I.camera = 2 AND 
-          EXISTS (SELECT  *
-									FROM vehicle V1 JOIN image I1 ON I1.reg = V1.id
-									WHERE I1.camera = 5 and K.id = V1.keeper)
+	      FROM keeper K JOIN vehicle V ON K.id = V.keeper
+		  JOIN image I ON I.reg = V.id
+	      WHERE I.camera = 2 AND 
+          EXISTS (SELECT  * 
+		  		  FROM vehicle V1 JOIN image I1 ON I1.reg = V1.id
+				  WHERE I1.camera = 5 and K.id = V1.keeper)
 
 		  
 ### Results: ###
@@ -69,7 +68,7 @@
 ## 5. Display the details of citizens (each citizen appears only once in the result) whose vehicles have been recorded by camera 2 and camera 5. The result should be calculated by completing the given code using the IN operator
 ### Query: ###
 
-          WITH
+            WITH
 	        Photographed_by5 AS (SELECT V.keeper
 						                   FROM vehicle V JOIN image I ON I.reg=V.id
 	 					                   WHERE I.camera=5)	  
