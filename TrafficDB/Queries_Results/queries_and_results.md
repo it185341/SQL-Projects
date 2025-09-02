@@ -95,9 +95,9 @@
                         AND I.camera = 2)
           AND EXISTS    (SELECT 1
                          FROM vehicle V
-                          JOIN image I ON I.reg = V.id
-                          WHERE V.keeper = V.id
-                          AND I.camera = 5)
+                         JOIN image I ON I.reg = V.id
+                         WHERE V.keeper = V.id
+                         AND I.camera = 5)
 		 
 ### Results: ###
 | id    | name               | address         |
